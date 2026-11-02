@@ -10,6 +10,8 @@ The enquiry then travels through the automation I have already tested, so I do n
 
 Bright Path Tuition is a sample name. The course descriptions are practice content that I can edit later.
 
+For the real-world purpose and proposed staff follow-up process, read [Why I am building this project](PROJECT_PURPOSE_AND_PLAN.md). The current website captures enquiries; ownership, status tracking, and reminders are future work.
+
 ## 2. The complete workflow
 
 ```text
@@ -78,6 +80,7 @@ tuition-crm-automation/
 |-- styles.css                       Homepage appearance
 |-- README.md                        Quick start and preview instructions
 |-- PROJECT_WORKFLOW.md              This guide and learning roadmap
+|-- PROJECT_PURPOSE_AND_PLAN.md      The problem, users, and next improvements
 |-- apps-script/
 |   |-- create-enquiry-form,gs        Existing form setup script
 |-- .git/                            Git's checkpoint history
@@ -103,6 +106,8 @@ Each lesson should add one small feature, explain it, and end with a preview and
 | 8 | Upload code and publish the website | Later | The code is on GitHub and a hosted website URL works. |
 
 Browser verification of the current homepage is still needed. The saved HTML has passed checks for three course cards, matching section links, and a stylesheet file. The responder form page returned HTTP 200 (a successful web response) and contained the expected form title and fields. This does not verify a submission through the automation.
+
+The course cards also have enquiry links that prefill the matching subject in a new tab. This uses normal HTML links. Test each selected course in the browser as described in the purpose-and-plan guide.
 
 ## 5. Current lesson: embed the existing form
 

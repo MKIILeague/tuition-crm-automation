@@ -172,6 +172,7 @@ h3 {
 }
 
 .section-intro {
+  max-width: 760px;
   color: var(--muted);
 }
 
@@ -184,6 +185,8 @@ h3 {
 }
 
 .course-card {
+  display: flex;
+  flex-direction: column;
   padding: 28px;
   border: 1px solid var(--line);
   border-top: 4px solid var(--ink);
@@ -195,13 +198,16 @@ h3 {
   color: var(--muted);
 }
 
-.course-tag {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: #edf1e8;
-  font-size: 0.8rem;
+/* Keep the course action near the bottom, even when descriptions vary. */
+.course-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 16px 0 4px;
+  font-weight: bold;
+}
+
+.course-link:hover {
+  text-decoration-thickness: 2px;
 }
 
 .enquiry {

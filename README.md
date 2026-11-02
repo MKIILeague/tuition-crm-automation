@@ -3,12 +3,15 @@ A tuition centre website with enquiry automation using Google Forms, Google Shee
 
 Start with [My project workflow](PROJECT_WORKFLOW.md) for a beginner-friendly explanation, a workflow diagram, a learning roadmap, and a step-by-step testing checklist.
 
+Read [Why I am building this project](PROJECT_PURPOSE_AND_PLAN.md) for the real-world problem, the people it could help, and a practical plan to turn enquiry capture into reliable follow-up.
+
 ## Current progress
 
 - Tested integration: Google Forms -> Google Sheets -> Make -> HubSpot.
 - Make uses email to create or update a contact; submitting the same email updates the existing contact.
 - Lesson 1: a local homepage with navigation, an introduction, three course cards, and an Enquire Now link.
 - Lesson 2: the existing Google Form is embedded in the enquiry section, with a link to open it in a new tab.
+- Each course card now opens the existing form with that subject selected. These links work through HTML and do not require JavaScript.
 - The responder page was checked with an HTTP request. Visual checks and a complete test submission from the website are still needed.
 
 Bright Path Tuition is a placeholder name. Course descriptions are sample copy for this learning project.
@@ -20,6 +23,7 @@ Bright Path Tuition is a placeholder name. Course descriptions are sample copy f
 | `index.html` | The homepage content and structure. |
 | `styles.css` | Colours, spacing, fonts, and layouts. |
 | `PROJECT_WORKFLOW.md` | Explains the whole project, its workflow, and the learning steps. |
+| `PROJECT_PURPOSE_AND_PLAN.md` | Explains the real-world purpose, current limits, and proposed improvements. |
 | `apps-script/create-enquiry-form,gs` | Existing Google Apps Script for creating the enquiry form and response sheet. |
 
 The homepage does not need JavaScript yet. Its links use HTML section IDs to move around the page.
@@ -82,3 +86,5 @@ The form still submits through the existing Google Sheets -> Make -> HubSpot aut
 ## Next lesson
 
 Preview the embedded form and test one enquiry all the way to HubSpot, then repeat with the same email to check the update behaviour. After that, add a small JavaScript feature as a separate lesson.
+
+Also check each **Enquire about English/Maths/Science** link: it should open a new tab with the matching course selected. A link like `entry.184110074=Maths` tells the existing Google Form which course to prefill. The person can change that answer before submitting.
