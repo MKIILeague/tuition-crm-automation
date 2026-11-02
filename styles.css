@@ -210,6 +210,22 @@ h3 {
   background: var(--accent);
 }
 
+/* An iframe displays Google's form inside our page. */
+.enquiry-form {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: 1101px;
+  margin: 24px auto 0;
+  border: 0;
+  border-radius: 6px;
+  background: white;
+}
+
+.form-fallback {
+  font-size: 0.95rem;
+}
+
 .site-footer {
   padding-top: 32px;
   padding-bottom: 32px;
@@ -219,6 +235,14 @@ h3 {
 
 /* On narrower screens, stack the cards in a single column. */
 @media (max-width: 720px) {
+  .enquiry {
+    padding: 24px 12px;
+  }
+
+  .enquiry-form {
+    height: 1250px;
+  }
+
   .course-grid {
     grid-template-columns: 1fr;
   }
