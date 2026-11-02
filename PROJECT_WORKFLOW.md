@@ -2,7 +2,7 @@
 
 ## 1. What am I building?
 
-I am building a practice website for a tuition centre. Visitors can read about English, Maths, and Science and send an enquiry using my existing Google Form.
+I am building a portfolio website for a fictional tuition centre. Visitors can read about English, Maths, and Science and send a practice enquiry using my existing Google Form.
 
 The enquiry then travels through the automation I have already tested, so I do not have to copy each person's details into HubSpot by hand.
 
@@ -36,7 +36,7 @@ Make uses the response in my existing automation
 HubSpot creates or updates a contact using the email address
 ```
 
-The Google Forms -> Google Sheets -> Make -> HubSpot part is already tested. The website now embeds the same form. A test submission starting from the website is still needed to check the complete journey.
+I have confirmed that the website -> Google Forms -> Google Sheets -> Make -> HubSpot journey is working. The redesigned website keeps the same form and course-prefill URLs. I should still check its new layout on different screen sizes.
 
 ### What each tool does
 
@@ -44,7 +44,7 @@ The Google Forms -> Google Sheets -> Make -> HubSpot part is already tested. The
 | --- | --- |
 | HTML | Holds the website's headings, paragraphs, cards, and links. |
 | CSS | Controls colours, spacing, fonts, and layout on different screen sizes. |
-| JavaScript | Will add a small interactive feature in a later lesson. It is not needed for the current section links. |
+| JavaScript | Controls the mobile menu and updates the footer year. Section links and FAQs work through HTML. |
 | Google Forms | Collects and submits the enquiry answers. |
 | Google Sheets | Stores form responses as rows. |
 | Make | Connects the form response data to HubSpot using my existing scenario. A scenario is Make's name for an automation workflow. |
@@ -78,7 +78,10 @@ A second form submission can still add another response row to Sheets. The creat
 tuition-crm-automation/
 |-- index.html                       Homepage content
 |-- styles.css                       Homepage appearance
+|-- script.js                        Mobile menu and footer year
+|-- assets/                          SVG illustration and favicon
 |-- README.md                        Quick start and preview instructions
+|-- WEBSITE_GUIDE.md                 Guide to the redesigned website
 |-- PROJECT_WORKFLOW.md              This guide and learning roadmap
 |-- PROJECT_PURPOSE_AND_PLAN.md      The problem, users, and next improvements
 |-- apps-script/
@@ -99,17 +102,17 @@ Each lesson should add one small feature, explain it, and end with a preview and
 | 1 | Test Forms -> Sheets -> Make -> HubSpot | Done, confirmed by me | Submitting the same email updates the existing contact. |
 | 2 | Build the homepage | Code saved | Navigation, introduction, three course cards, and Enquire Now are present. |
 | 3 | Change the homepage heading | Done | The saved heading says "Build confidence, one lesson at a time." |
-| 4 | Embed my existing Google Form | Code added; visual check pending | The actual form loads in the enquiry section, with a separate link as a fallback. |
-| 5 | Test the enquiry from the website | To do | A test submission reaches Sheets, Make, and the intended HubSpot contact. |
-| 6 | Add basic JavaScript | Later | A small feature, such as a mobile navigation toggle, works with mouse and keyboard. |
-| 7 | Personalise the content and check small screens | Later | My chosen name and copy are consistent and the layout stays readable. |
+| 4 | Embed my existing Google Form | Done, confirmed working by me | The actual form loads in the enquiry section, with a separate link as a fallback. |
+| 5 | Test the enquiry from the website | Done, confirmed working by me | A test submission reaches Sheets, Make, and the intended HubSpot contact. |
+| 6 | Add basic JavaScript | Code added | A mobile navigation toggle supports clicks, Escape, and returning to a wide layout. |
+| 7 | Build the full portfolio website | Code added; layout review next | The fictional brand has courses, approach, FAQs, a responsive layout, and the existing form. |
 | 8 | Upload code and publish the website | Later | The code is on GitHub and a hosted website URL works. |
 
-Browser verification of the current homepage is still needed. The saved HTML has passed checks for three course cards, matching section links, and a stylesheet file. The responder form page returned HTTP 200 (a successful web response) and contained the expected form title and fields. This does not verify a submission through the automation.
+The previous website-to-HubSpot journey is confirmed working by me. The redesigned page preserves that integration. Layout verification is separate from the automation test; use [WEBSITE_GUIDE.md](WEBSITE_GUIDE.md) to review the new page.
 
 The course cards also have enquiry links that prefill the matching subject in a new tab. This uses normal HTML links. Test each selected course in the browser as described in the purpose-and-plan guide.
 
-## 5. Current lesson: embed the existing form
+## 5. The working form connection
 
 An **iframe** displays another webpage inside my page. Here it will display the Google Form, while Google continues to handle submissions.
 
@@ -125,7 +128,7 @@ In my existing Google Form, open the three-dot **More** menu, choose **Embed HTM
 2. The iframe has a descriptive `title` so assistive tools can identify it.
 3. CSS makes it fit the available page width, with more height on smaller screens.
 4. A normal link opens the same responder form separately if needed.
-5. Still to do: preview the page and test the full path before marking this lesson complete.
+5. The full journey was confirmed working before the website redesign.
 
 The website displays the existing form. It does not need a second HTML submission form or direct calls to Make or HubSpot. An internet connection is required for the embedded Google Form to load.
 
@@ -217,4 +220,4 @@ Seeing the Google Form's confirmation message shows that Google received the res
 
 ## 8. My next practice task
 
-After checking the form in the browser, change the short introduction above it in `index.html`. Save, refresh, check the result, and commit that one edit. This lets me practise without changing how submissions work.
+Follow the small paragraph-edit exercise in [WEBSITE_GUIDE.md](WEBSITE_GUIDE.md). Save, refresh, check the result, and commit that one edit. This lets me practise without changing how submissions work.

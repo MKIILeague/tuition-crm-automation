@@ -1,92 +1,170 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore English, Maths, and Science at Bright Path Tuition, a practice tuition centre website.">
-  <title>Bright Path Tuition | Home</title>
+  <meta name="description" content="Explore English, Maths, and Science with Bright Path Tuition, a fictional tuition centre built as a web development and CRM automation portfolio project.">
+  <meta name="theme-color" content="#173e35">
+  <title>Bright Path Tuition | A brighter way to learn</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Change the centre name here and in the page title above. -->
+  <div class="demo-banner">A portfolio demo of a fictional tuition centre. Please use test details when enquiring.</div>
+
+  <!-- HEADER: the navigation works without JavaScript; JS adds the mobile menu. -->
   <header class="site-header">
     <div class="container header-content">
-      <a class="brand" href="#home">Bright Path <span>Tuition</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
+      <a class="brand" href="#home" aria-label="Bright Path Tuition home">
+        <span class="brand-mark" aria-hidden="true">bp<span>.</span></span>
+        <span class="brand-name">Bright Path<span>Tuition</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden>
+        <span class="menu-label">Menu</span><span class="menu-lines" aria-hidden="true"></span>
+      </button>
+      <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="#about">Our approach</a>
         <a href="#courses">Courses</a>
-        <a href="#enquiry">Enquire Now</a>
+        <a href="#faq">FAQs</a>
+        <a class="button button-small" href="#enquiry">Enquire now <span aria-hidden="true">&nearr;</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- INTRODUCTION: practise editing the heading and paragraph. -->
+    <!-- HERO: edit the heading and intro here to practise changing content. -->
     <section class="hero" id="home" aria-labelledby="intro-heading">
-      <div class="container hero-content">
-        <p class="eyebrow">A little support. A brighter path.</p>
-        <h1 id="intro-heading">Build confidence, one lesson at a time.</h1>
-        <p class="intro">Build your understanding in English, Maths, and Science. Explore our courses and take the next step in your learning journey.</p>
-        <a class="button" href="#enquiry">Enquire Now <span aria-hidden="true">&rarr;</span></a>
-        <p class="practice-note">Practice website &middot; Centre name and course descriptions are sample content.</p>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> A little support. A brighter path.</p>
+          <h1 id="intro-heading">Build confidence,<br>one lesson <em>at a time.</em></h1>
+          <p class="intro">Big questions. Small breakthroughs. Discover a fresh way to approach English, Maths, and Science, and take your next step with confidence.</p>
+          <div class="hero-actions">
+            <a class="button" href="#courses">Explore our courses <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="#enquiry">Make an enquiry <span aria-hidden="true">&nearr;</span></a>
+          </div>
+          <div class="hero-subjects" aria-label="Subjects available">
+            <span>English</span><span>Maths</span><span>Science</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <span class="art-caption">A fresh page. A new possibility.</span>
+          <img src="assets/learning-desk.svg" width="620" height="610" alt="Illustration of an open learning notebook with words, a graph, a science diagram, and a pencil." fetchpriority="high">
+          <span class="art-note"><span aria-hidden="true">&#10022;</span> Keep asking. Keep growing.</span>
+        </div>
+      </div>
+      <div class="container hero-bottom">
+        <p>For the questions that spark curiosity.<br><strong>And the confidence to keep going.</strong></p>
+        <a href="#about">Get to know Bright Path <span aria-hidden="true">&darr;</span></a>
       </div>
     </section>
 
-    <!-- COURSES: each article is one card. -->
-    <section class="courses container" id="courses" aria-labelledby="courses-heading">
-      <p class="eyebrow">Find your focus</p>
-      <h2 id="courses-heading">Three subjects. New possibilities.</h2>
-      <p class="section-intro">Start with the subject you would like to feel more confident in. Each course link opens the enquiry form in a new tab with that subject selected. You can change it before submitting.</p>
-
-      <div class="course-grid">
-        <article class="course-card">
-          <span class="course-number" aria-hidden="true">01 / ENGLISH</span>
-          <h3>English</h3>
-          <p>Practise reading, writing, and grammar to express your ideas with confidence.</p>
-          <!-- The entry number identifies Course interest in the existing form. -->
-          <a class="course-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?usp=pp_url&amp;entry.184110074=English" target="_blank" rel="noopener noreferrer">Enquire about English <span aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="course-card">
-          <span class="course-number" aria-hidden="true">02 / MATHS</span>
-          <h3>Maths</h3>
-          <p>Explore numbers, strengthen the basics, and work through problems step by step.</p>
-          <a class="course-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?usp=pp_url&amp;entry.184110074=Maths" target="_blank" rel="noopener noreferrer">Enquire about Maths <span aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="course-card">
-          <span class="course-number" aria-hidden="true">03 / SCIENCE</span>
-          <h3>Science</h3>
-          <p>Explore how the world works and connect scientific ideas to everyday life.</p>
-          <a class="course-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?usp=pp_url&amp;entry.184110074=Science" target="_blank" rel="noopener noreferrer">Enquire about Science <span aria-hidden="true">&rarr;</span></a>
-        </article>
+    <!-- ABOUT: illustrative teaching approach for this fictional centre. -->
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">The Bright Path idea</p>
+          <h2 id="about-heading">Understanding comes first.<br><em>Confidence follows.</em></h2>
+          <p class="section-intro">Learning can feel different when an idea finally clicks. Bright Path is built around that moment: a clearer explanation, a little practice, and the courage to try again.</p>
+          <a class="text-link" href="#courses">Find your starting point <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <ol class="approach-list">
+          <li><span class="step-number">01</span><div><h3>Make sense of the idea</h3><p>Start with the foundations and break a big question into smaller, clearer parts.</p></div></li>
+          <li><span class="step-number">02</span><div><h3>Put it into practice</h3><p>Work with words, numbers, and examples to connect an idea to something familiar.</p></div></li>
+          <li><span class="step-number">03</span><div><h3>Keep moving forward</h3><p>Use each question as a chance to reflect, try a different approach, and build understanding.</p></div></li>
+        </ol>
       </div>
     </section>
 
-    <!-- ENQUIRY: this iframe displays the existing Google Form. -->
-    <section class="enquiry container" id="enquiry" aria-labelledby="enquiry-heading">
-      <p class="eyebrow">Your next step</p>
-      <h2 id="enquiry-heading">Let's talk about learning.</h2>
-      <p>Choose your course and tell us how to reach you using the form below.</p>
-      <p>An enquiry lets you ask about a course. It does not book or pay for a class.</p>
-      <p class="practice-note">This is a practice project. Please use test details when submitting an enquiry.</p>
+    <!-- COURSES: links keep the working form and its course-prefill field. -->
+    <section class="section courses-section" id="courses" aria-labelledby="courses-heading">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Find your focus</p><h2 id="courses-heading">Three subjects.<br><em>So many possibilities.</em></h2></div>
+          <p class="section-intro">Find a subject you would like to feel more confident in. These sample programmes offer a starting point for your enquiry.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card course-english">
+            <div class="course-top"><span class="course-icon" aria-hidden="true">Aa</span><span class="course-number">01 / Language</span></div>
+            <h3>English</h3>
+            <p>Find the words to express yourself. Explore language and bring your ideas to life.</p>
+            <ul class="course-topics"><li>Reading &amp; understanding</li><li>Writing &amp; expression</li><li>Grammar &amp; vocabulary</li></ul>
+            <a class="course-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?usp=pp_url&amp;entry.184110074=English" target="_blank" rel="noopener noreferrer">Enquire about English <span aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="course-card course-maths">
+            <div class="course-top"><span class="course-icon" aria-hidden="true">x&sup2;</span><span class="course-number">02 / Reasoning</span></div>
+            <h3>Maths</h3>
+            <p>See the patterns behind the problem. Build your understanding, one step at a time.</p>
+            <ul class="course-topics"><li>Numbers &amp; foundations</li><li>Patterns &amp; relationships</li><li>Problem-solving practice</li></ul>
+            <a class="course-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?usp=pp_url&amp;entry.184110074=Maths" target="_blank" rel="noopener noreferrer">Enquire about Maths <span aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="course-card course-science">
+            <div class="course-top"><span class="course-icon" aria-hidden="true">H<span class="subscript">2</span>O</span><span class="course-number">03 / Discovery</span></div>
+            <h3>Science</h3>
+            <p>Stay curious about the world. Connect scientific ideas with the things you see every day.</p>
+            <ul class="course-topics"><li>Scientific concepts</li><li>Observation &amp; explanation</li><li>Everyday applications</li></ul>
+            <a class="course-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?usp=pp_url&amp;entry.184110074=Science" target="_blank" rel="noopener noreferrer">Enquire about Science <span aria-hidden="true">&nearr;</span></a>
+          </article>
+        </div>
+        <p class="course-note">Course links open the form in a new tab with your subject selected. You can change it before submitting.</p>
+      </div>
+    </section>
 
-      <!-- Keep this URL connected to the same form used by your automation. -->
-      <iframe
-        class="enquiry-form"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?embedded=true"
-        title="Tuition class enquiry form"
-        width="640"
-        height="1101"
-        loading="lazy">
-      </iframe>
-      <p class="form-fallback">Having trouble viewing the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform" target="_blank" rel="noopener noreferrer">Open the enquiry form in a new tab</a>.</p>
+    <!-- ENQUIRY JOURNEY: describes the existing visitor flow without promising a booking. -->
+    <section class="section journey-section" aria-labelledby="journey-heading">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">A simple place to start</p><h2 id="journey-heading">From curious<br><em>to taking the next step.</em></h2></div><a class="button button-light" href="#enquiry">Start your enquiry <span aria-hidden="true">&rarr;</span></a></div>
+        <ol class="journey-list">
+          <li><span class="journey-number">01</span><h3>Explore a subject</h3><p>Read about English, Maths, and Science. Start with the one you want to know more about.</p></li>
+          <li><span class="journey-number">02</span><h3>Share your interest</h3><p>Tell us your name, email, and chosen subject. Your phone number is optional.</p></li>
+          <li><span class="journey-number">03</span><h3>Send your enquiry</h3><p>Submit the form and look for its confirmation message. An enquiry is a first step, rather than a class booking.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ: native details elements open and close without JavaScript. -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container faq-grid">
+        <div class="faq-intro"><p class="eyebrow">A little clarity</p><h2 id="faq-heading">Good questions.<br><em>Clear answers.</em></h2><p class="section-intro">A few things to know before you take the next step.</p><a class="text-link" href="#enquiry">Ready to enquire? <span aria-hidden="true">&rarr;</span></a></div>
+        <div class="faq-list">
+          <details><summary>Which subjects can I enquire about?</summary><p>English, Maths, and Science. Use a course card to open a form with that subject selected, or choose a subject in the form below.</p></details>
+          <details><summary>Does an enquiry reserve a place?</summary><p>No. This website collects course enquiries. It does not take payments, confirm enrolments, or reserve class places.</p></details>
+          <details><summary>Where can I find fees and class times?</summary><p>This is a portfolio demo for a fictional centre, so there is no live timetable, fee list, or teaching location. The sample programmes show how a real tuition centre's website could present its courses.</p></details>
+          <details><summary>Do I need to provide a phone number?</summary><p>No. Phone number is optional. First name, last name, email, and course interest are required by the form.</p></details>
+          <details><summary>Can I change the preselected subject?</summary><p>Yes. A course link gives you a starting selection. You can change the Course interest answer in Google Forms before submitting.</p></details>
+          <details><summary>What happens to the details I submit?</summary><p>The form sends your answers to the connected Google Sheet. The project's automation then creates or updates a HubSpot contact using your email. Please use test details for this demo.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENQUIRY: keep this embed URL connected to the existing automation. -->
+    <section class="section enquiry-section" id="enquiry" aria-labelledby="enquiry-heading">
+      <div class="container enquiry-grid">
+        <div class="enquiry-copy">
+          <p class="eyebrow">Your next chapter</p><h2 id="enquiry-heading">Let's talk<br><em>about learning.</em></h2>
+          <p class="section-intro">Choose a subject and tell us how to reach you. A new learning journey can start with a simple question.</p>
+          <div class="enquiry-checklist"><h3>Before you begin</h3><ul><li>Have a subject in mind.</li><li>Use a test name and email for this demo.</li><li>Add a phone number only if you want to.</li></ul></div>
+          <p class="practice-note">Bright Path Tuition is fictional. This form is connected to a working practice automation; no real classes are booked.</p>
+          <a class="text-link form-fallback" href="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform" target="_blank" rel="noopener noreferrer">Open the form in a new tab <span aria-hidden="true">&nearr;</span></a>
+        </div>
+        <div class="form-panel">
+          <div class="form-panel-heading"><span class="form-dot" aria-hidden="true"></span><p>Course enquiry form</p><span>Google Forms</span></div>
+          <iframe class="enquiry-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfe4j-lWtuuj8mx5G0radSLLM9TrI6FUKJhljXnyaXVIqXW2g/viewform?embedded=true" title="Tuition class enquiry form" width="640" height="1101" loading="lazy"></iframe>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="container site-footer">
-    <p>Bright Path Tuition &middot; A beginner web development project</p>
-    <a href="#home">Back to top &uarr;</a>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand" href="#home" aria-label="Bright Path Tuition home"><span class="brand-mark" aria-hidden="true">bp<span>.</span></span><span class="brand-name">Bright Path<span>Tuition</span></span></a>
+      <p>A little support.<br>A brighter path.</p>
+      <nav aria-label="Footer navigation"><a href="#about">Our approach</a><a href="#courses">Courses</a><a href="#faq">FAQs</a><a href="#enquiry">Enquire</a></nav>
+    </div>
+    <div class="container footer-bottom"><p>&copy; <span id="current-year">2026</span> Bright Path Tuition. A fictional centre and portfolio project.</p><a href="#home">Back to top <span aria-hidden="true">&uarr;</span></a></div>
   </footer>
 </body>
 </html>

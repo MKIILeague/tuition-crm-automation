@@ -4,9 +4,9 @@
 
 Help a tuition centre collect clear course enquiries, keep the person's details organised, and give staff a reliable way to follow up.
 
-My working assumption is a small tuition centre whose visitors include parents, guardians, and students. This is still a practice project. I will validate these assumptions with a real centre before adding features for its daily work.
+This is a side project and portfolio piece, rather than a website for an actual tuition centre. Bright Path Tuition is fictional. I am modelling the needs of a small centre whose visitors could include parents, guardians, and students.
 
-The first useful result is already partly built: a visitor can find a course and submit the existing form, and my tested automation can create or update the HubSpot contact. The next business result to build is making sure that enquiry gets an owner and a next action.
+The website-to-HubSpot journey is confirmed working by me: a visitor can find a course, submit the existing form, and reach the HubSpot contact through the automation. A fuller responsive website has now been added around that journey. The next operational result to explore is making sure an enquiry gets an owner and a next action.
 
 ## The real problems this could solve
 
@@ -56,9 +56,9 @@ This feature uses HTML links, not JavaScript. The query parameter `entry.1841100
 3. Repeat for Maths and Science.
 4. Check that the selection can still be changed before submission.
 5. Check that the embedded form and general Enquire Now link still work.
-6. Use the existing end-to-end checklist in [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md#7-test-the-full-enquiry-workflow-after-embedding) before calling the website integration fully tested.
+6. Keep the end-to-end checklist in [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md#7-test-the-full-enquiry-workflow-after-embedding) for future changes to the integration. I have confirmed the original journey works.
 
-The three prefilled URLs have been checked against Google's returned form data. Visual browser checks and submission tests remain separate checks.
+The three prefilled URLs have been checked against Google's returned form data, and I have confirmed the enquiry journey works. The redesigned page needs its own visual review on wide and narrow screens.
 
 ## How the enquiry process could grow
 
@@ -111,11 +111,12 @@ A repeat submission from the same email is a new enquiry. A retry of the same su
 
 | Priority | One small step | Why it matters | Completion check |
 | --- | --- | --- | --- |
-| Now | Test the website-to-HubSpot journey | Confirms the whole system works together | A new test email creates a contact; the same email updates it; the course value arrives correctly |
+| Done | Test the website-to-HubSpot journey | Confirms the whole system works together | Journey confirmed working by the project owner |
+| Now | Preview the redesigned website | Checks the presentation around the working integration | Navigation, mobile menu, FAQs, illustration, and form display correctly |
 | Next | Agree one follow-up process with a centre | Turns captured details into useful work | One example enquiry has an owner, status, and next action |
 | Next | Record one follow-up task manually in HubSpot | Proves staff can use the process before automation | The task is linked to the correct contact with an agreed due time |
 | Then | Add verified course details to the website | Helps visitors decide before enquiring | Real levels, format, and contact details have been checked with the centre |
-| Then | Add one basic JavaScript feature, if needed | Practises interaction without changing submission handling | For example, a mobile menu works with keyboard and mouse |
+| Added | Add a basic JavaScript mobile menu | Practises interaction without changing submission handling | Menu opens and closes with mouse and keyboard; review it in the browser |
 | Later | Add a processing log and safe retry behaviour in Make | Makes failures visible and recoverable | Reprocessing one submission does not create duplicate work |
 | Later | Separate enquiries from contacts | Supports repeat enquiries without losing history | Two requests from one email remain independently traceable |
 | Later | Add a small operations report | Helps the centre improve its process | Totals reconcile with individual submissions and recorded outcomes |

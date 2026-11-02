@@ -5,16 +5,19 @@ Start with [My project workflow](PROJECT_WORKFLOW.md) for a beginner-friendly ex
 
 Read [Why I am building this project](PROJECT_PURPOSE_AND_PLAN.md) for the real-world problem, the people it could help, and a practical plan to turn enquiry capture into reliable follow-up.
 
+For the redesigned website, start with [My website editing guide](WEBSITE_GUIDE.md). It explains the layout, mobile menu, files, preview steps, and an easy practice edit.
+
 ## Current progress
 
 - Tested integration: Google Forms -> Google Sheets -> Make -> HubSpot.
 - Make uses email to create or update a contact; submitting the same email updates the existing contact.
-- Lesson 1: a local homepage with navigation, an introduction, three course cards, and an Enquire Now link.
+- A responsive one-page website for the fictional Bright Path Tuition brand, including an illustrated introduction, teaching approach, three course cards, an enquiry guide, FAQs, and the enquiry form.
 - Lesson 2: the existing Google Form is embedded in the enquiry section, with a link to open it in a new tab.
 - Each course card now opens the existing form with that subject selected. These links work through HTML and do not require JavaScript.
-- The responder page was checked with an HTTP request. Visual checks and a complete test submission from the website are still needed.
+- The website-to-HubSpot journey is working, confirmed by the project owner. The redesign preserves the existing form URLs.
+- Basic JavaScript adds an accessible mobile menu and updates the footer year. The navigation also works without JavaScript.
 
-Bright Path Tuition is a placeholder name. Course descriptions are sample copy for this learning project.
+Bright Path Tuition is a fictional centre. This is a side project for learning and a portfolio; course descriptions are sample content and form submissions should use test details.
 
 ## Files
 
@@ -22,11 +25,14 @@ Bright Path Tuition is a placeholder name. Course descriptions are sample copy f
 | --- | --- |
 | `index.html` | The homepage content and structure. |
 | `styles.css` | Colours, spacing, fonts, and layouts. |
+| `script.js` | Mobile menu behaviour and footer year. |
+| `assets/` | Local SVG homepage illustration and browser-tab icon. |
+| `WEBSITE_GUIDE.md` | Beginner-friendly guide to the redesigned website and editing it. |
 | `PROJECT_WORKFLOW.md` | Explains the whole project, its workflow, and the learning steps. |
 | `PROJECT_PURPOSE_AND_PLAN.md` | Explains the real-world purpose, current limits, and proposed improvements. |
 | `apps-script/create-enquiry-form,gs` | Existing Google Apps Script for creating the enquiry form and response sheet. |
 
-The homepage does not need JavaScript yet. Its links use HTML section IDs to move around the page.
+Navigation links use HTML section IDs to move around the page. JavaScript controls the small-screen menu; native HTML handles the FAQ answers.
 
 ## Preview the homepage
 
@@ -37,14 +43,14 @@ The homepage does not need JavaScript yet. Its links use HTML section IDs to mov
 
 Optional: if you use VS Code with the Live Server extension already installed, right-click `index.html` and choose **Open with Live Server** for automatic refresh.
 
-Check that **Courses** jumps to the cards and **Enquire Now** jumps to the embedded form. The form needs an internet connection to load. Make the browser window narrow to see the cards stack vertically. Use **Tab** to move between links and **Enter** to follow one.
+Check that **Courses** jumps to the cards and **Enquire now** jumps to the embedded form. The form needs an internet connection to load. Make the browser window narrow to see the menu button and stacked cards. Use **Tab** to move between links, **Enter** to follow one, and **Escape** to close an open mobile menu.
 
 ## Lesson 1: understand and practise
 
 - **HTML supplies the content.** `<header>` contains the navigation, `<main>` contains the main content, and each `<section>` groups related content. Each `<article>` is a course card.
 - **CSS supplies the appearance.** The `<link>` in the HTML loads `styles.css`. A class such as `course-card` connects an HTML element to its CSS rules.
 - **Links can jump within a page.** `href="#enquiry"` points to the section with `id="enquiry"`. The Enquire Now link looks like a button because of its `button` class.
-- **The layout adapts to screen size.** The grid uses three columns on larger screens. The media query switches to one column at 720 pixels or narrower.
+- **The layout adapts to screen size.** The grid uses three columns on larger screens. The media query switches to one column at 800 pixels or narrower.
 
 Try one small edit first:
 
@@ -85,6 +91,6 @@ The form still submits through the existing Google Sheets -> Make -> HubSpot aut
 
 ## Next lesson
 
-Preview the embedded form and test one enquiry all the way to HubSpot, then repeat with the same email to check the update behaviour. After that, add a small JavaScript feature as a separate lesson.
+Preview the redesigned page on wide and narrow screens, then practise changing one paragraph as described in [WEBSITE_GUIDE.md](WEBSITE_GUIDE.md). The original enquiry journey has already been confirmed working; check the form and course links still open correctly after the redesign.
 
 Also check each **Enquire about English/Maths/Science** link: it should open a new tab with the matching course selected. A link like `entry.184110074=Maths` tells the existing Google Form which course to prefill. The person can change that answer before submitting.
