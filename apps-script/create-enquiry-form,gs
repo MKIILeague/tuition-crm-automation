@@ -1,0 +1,84 @@
+function createEnquiryForm() {
+  // Reuse the existing setup if you run this function again.
+  const settings = PropertiesService.getScriptProperties();
+  const existingFormId = settings.getProperty('ENQUIRY_FORM_ID');
+
+  if (existingFormId) {
+    const existingForm = FormApp.openById(existingFormId);
+
+    console.log('Form already created.');
+    console.log('Edit form: ' + existingForm.getEditUrl());
+    console.log('Fill in form: ' + existingForm.getPublishedUrl());
+    console.log(
+      'Response spreadsheet: ' +
+      SpreadsheetApp.openById(
+        existingForm.getDestinationId()
+      ).getUrl()
+    );
+    return;
+  }
+
+  // Create an unpublished form while we configure it.
+  const form = FormApp.create(
+    'Tuition Class Enquiry — Practice',
+    false
+  );
+
+  form.setDescription(
+    'Practice enquiry form for learning CRM automation. ' +
+    'Please use test details.'
+  );
+
+  form.setConfirmationMessage(
+    'Thank you! Your enquiry has been received.'
+  );
+
+  form.addTextItem()
+    .setTitle('First name')
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle('Last name')
+    .setRequired(true);
+
+  const emailValidation = FormApp.createTextValidation()
+    .requireTextIsEmail()
+    .setHelpText('Please enter a valid email address.')
+    .build();
+
+  form.addTextItem()
+    .setTitle('Email')
+    .setValidation(emailValidation)
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle('Phone number')
+    .setHelpText('Optional. Include your country code, e.g. +60.')
+    .setRequired(false);
+
+  form.addListItem()
+    .setTitle('Course interest')
+    .setChoiceValues(['English', 'Maths', 'Science'])
+    .setRequired(true);
+
+  // Google Forms automatically writes submissions here.
+  const spreadsheet = SpreadsheetApp.create(
+    'Tuition Enquiries — Practice'
+  );
+
+  form.setDestination(
+    FormApp.DestinationType.SPREADSHEET,
+    spreadsheet.getId()
+  );
+
+  // Publish the completed practice form.
+  form.setPublished(true);
+  form.setAcceptingResponses(true);
+
+  settings.setProperty('ENQUIRY_FORM_ID', form.getId());
+
+  console.log('Setup complete!');
+  console.log('Edit form: ' + form.getEditUrl());
+  console.log('Fill in form: ' + form.getPublishedUrl());
+  console.log('Response spreadsheet: ' + spreadsheet.getUrl());
+}
